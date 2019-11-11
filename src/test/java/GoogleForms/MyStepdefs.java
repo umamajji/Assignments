@@ -22,18 +22,10 @@ import static org.junit.Assert.assertTrue;
 public class MyStepdefs {
     WebDriver driver;
    
-    @And("^I click on (\\d+)st link in search options$")
-    public void iClickOnStLinkInSearchOptions(int arg0) throws Throwable {
-        driver.findElement(By.xpath("//h3[contains(text(), 'Nisum: inicio')]")).click();
-
-        String title = driver.getTitle();
-        System.out.println(title);
-        Assert.assertTrue( title.equalsIgnoreCase("inicio | Nisum"));
-    }
 
     @Given("^I open the Google form$")
     public void iOpenTheGoogleForm() throws Throwable {
-        System.setProperty("webdriver.chrome.driver", "D:\\Selenicucumber\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "E:\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
@@ -115,7 +107,7 @@ public class MyStepdefs {
     public void I_enter_date_of_birth() throws Throwable {
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@type='date']")).sendKeys("03/26/2018");
+        driver.findElement(By.xpath("//*[@type='date']")).sendKeys("03/06/2000");
 
     }
 
@@ -160,11 +152,7 @@ public class MyStepdefs {
     @And("^I enter my work experience$")
     public void I_enter_my_work_experience() throws Throwable {
 
-        /*
-         * WebDriverWait wait=new WebDriverWait(driver,10);
-         * wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-         * "//input[contains(@name,'entry.954027915')]")));
-         */
+
 
         driver.findElement(By.xpath("//*[@id='mG61Hd']//div[8]//div[1]/div[2]/textarea")).sendKeys("7");
     }
