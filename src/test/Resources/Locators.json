@@ -1,0 +1,14 @@
+{
+  "lastName":"//input[@name='lastName']",
+  "phone": "xpath,//input[@name='phone']",
+  "Email": "id,userName",
+  "City": "xpath,//input[@name='city']",
+  "firstName": "//input[@name='firstName']",
+  "place": "xpath,Hyderabad",
+  "State": "xpath,//input[@name='state']",
+  "coutry": "xpath,//select[@name='country']",
+  "username": "id,email",
+  "uname":"xpath,//input[@name='userName']"
+}
+
+

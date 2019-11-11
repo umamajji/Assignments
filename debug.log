@@ -1,0 +1,5 @@
+[1016/170331.833:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Nisum\AppData\Local\Temp\scoped_dir18948_27425\Crashpad\reports\fff26647-c987-4b03-a921-6aa8df3dae95.dmp: The system cannot find the path specified. (0x3)
+[1016/170331.852:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[1017/182546.090:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[1109/194816.795:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1109/194816.849:ERROR:exception_snapshot_win.cc(98)] thread ID 46344 not found in process
