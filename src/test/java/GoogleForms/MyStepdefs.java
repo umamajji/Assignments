@@ -189,7 +189,7 @@ public class MyStepdefs {
     @And("^I enter my signature$")
     public void I_enter_my_signature() throws Throwable {
 
-        driver.findElement(By.xpath("//input[@type='text' and @aria-label='Add your signature.']")).sendKeys("lakshmi");
+        driver.findElement(By.xpath("//input[@type='text' and @aria-label='Add your signature.']")).sendKeys("uma");
 
     }
 
