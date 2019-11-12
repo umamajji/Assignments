@@ -25,7 +25,8 @@ public class MyStepdefs {
 
     @Given("^I open the Google form$")
     public void iOpenTheGoogleForm() throws Throwable {
-        System.setProperty("webdriver.chrome.driver", "E:\\drivers\\chromedriver.exe");
+      
+        System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
@@ -166,8 +167,7 @@ public class MyStepdefs {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=':g.select-files-button']/div")).click();
         Thread.sleep(2000);
-        Runtime.getRuntime().exec("D:\\AutoIT\\FileUpload.exe");
-
+        Runtime.getRuntime().exec("D:\\AutoItfile.exe");
         Thread.sleep(7000);
         Actions a = new Actions(driver);
         WebElement e = driver.findElement(By.xpath("//*[@id='picker:ap:0']"));
