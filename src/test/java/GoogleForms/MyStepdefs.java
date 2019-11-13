@@ -35,7 +35,7 @@ public class MyStepdefs {
 
     @And("^I enter the username and click on next$")
     public void iEnterTheUsernameAndClickOnNext() throws Throwable {
-        driver.findElement(By.xpath("//input[@id='identifierId']")).sendKeys("ngorrepati@nisum.com");
+        driver.findElement(By.xpath("//input[@id='identifierId']")).sendKeys("ukumari@nisum.com");
         driver.findElement(By.xpath("//span[text()='Next']")).click();
         String url = driver.getCurrentUrl();
         System.out.println("url >>" + url);
