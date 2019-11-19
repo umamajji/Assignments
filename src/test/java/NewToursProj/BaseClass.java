@@ -1,20 +1,16 @@
-package NewToursProj;
+package potterybarnkids;
 
-import static org.junit.Assert.assertTrue;
-
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import org.junit.Test;
 import org.openqa.selenium.By;
-import org.testng.*;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 /**
@@ -35,14 +31,19 @@ public class BaseClass {
         if (prop.getProperty("browser").equals("chrome")) {
 
             try {
-                System.setProperty("webdriver.chrome.driver", "E:\\drivers\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
                 driver = new ChromeDriver();
                 Thread.sleep(10000);
-                driver.get(prop.getProperty("url"));
+                driver.get(prop.getProperty("airlinesUrl"));
                 driver.manage().window().maximize();
-                Thread.sleep(20000);
-                driver.switchTo().frame(0);
-                driver.findElement(By.xpath("//*[@id='home']/div[10]/div/a[1]")).click();
+                if(prop.getProperty("Url").equals("https://www.potterybarnkids.com")) {
+                    WebDriverWait wait = new WebDriverWait(driver, 10);
+                    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='home']/div[10]/div/a[1]")));
+                    driver.switchTo().frame(0);
+                    WebElement element = driver.findElement(By.xpath("//*[@id='home']/div[10]/div/a[1]"));
+                    JavascriptExecutor js = (JavascriptExecutor) driver;
+                    js.executeScript("arguments[0].click();", element);
+                }
 
             } catch (Exception e) {
                 e.getMessage();
